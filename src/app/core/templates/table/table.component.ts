@@ -6,7 +6,6 @@ import {
   getCoreRowModel,
   Table
 } from "@tanstack/angular-table";
-import {Todo} from "../../types/todo";
 
 @Component({
   selector: 'app-table',
@@ -24,8 +23,7 @@ export class TableComponent<T> {
     this.table = createAngularTable(() => ({
       data: this.data,
       columns: this.columns,
-      getCoreRowModel: getCoreRowModel(),
-      debugTable: true
+      getCoreRowModel: getCoreRowModel()
     }))
   }
 }
