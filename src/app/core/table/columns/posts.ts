@@ -10,6 +10,7 @@ export const postColumns: ColumnDef<Post>[] = [
   },
   {
     accessorKey: 'title',
+    cell: info => `<a href="posts/${info.row.original.id}/comments">${info.row.original.title}</a>`
   },
   {
     accessorKey: 'body',

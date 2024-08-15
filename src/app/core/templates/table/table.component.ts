@@ -26,4 +26,6 @@ export class TableComponent<T> {
       getCoreRowModel: getCoreRowModel()
     }))
   }
+
+  protected readonly console = console;
 }

@@ -1,5 +1,5 @@
 <div class="p-2">
-  @defer (when data.length > 0) {
+  @defer (when data && data.length > 0) {
     <table>
       <thead>
         @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
