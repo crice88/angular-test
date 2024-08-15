@@ -8,4 +8,5 @@ export const routes: Routes = [
   { path: 'todos', component: TodoComponent },
   { path: 'posts', component: PostComponent },
   { path: 'albums', component: AlbumComponent },
+  { path: '',   redirectTo: '/todos', pathMatch: 'full' }
 ];
