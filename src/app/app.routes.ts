@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HomeComponent } from './home/home.component';
+import {TodoComponent} from "./pages/todo/todo.component";
+import {PostComponent} from "./pages/post/post.component";
+import {AlbumComponent} from "./pages/album/album.component";
 
 export const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'todos', component: TodoComponent },
+  { path: 'posts', component: PostComponent },
+  { path: 'albums', component: AlbumComponent },
 ];

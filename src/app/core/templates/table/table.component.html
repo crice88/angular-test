@@ -1,0 +1,46 @@
+<div class="p-2">
+  @defer (when data.length > 0) {
+    <table>
+      <thead>
+        @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
+          <tr>
+            @for (header of headerGroup.headers; track header.id) {
+              @if (!header.isPlaceholder) {
+                <th>
+                  <ng-container
+                    *flexRender="
+                    header.column.columnDef.header;
+                    props: header.getContext();
+                    let header
+                  "
+                  >
+                    <div [innerHTML]="header"></div>
+                  </ng-container>
+                </th>
+              }
+            }
+          </tr>
+        }
+      </thead>
+      <tbody>
+        @for (row of table.getRowModel().rows; track row.id) {
+          <tr>
+            @for (cell of row.getVisibleCells(); track cell.id) {
+              <td>
+                <ng-container
+                  *flexRender="
+                        cell.column.columnDef.cell;
+                        props: cell.getContext();
+                        let cell
+                      "
+                >
+                  <div [innerHTML]="cell"></div>
+                </ng-container>
+              </td>
+            }
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>
