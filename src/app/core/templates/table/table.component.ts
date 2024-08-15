@@ -15,10 +15,10 @@ import {Todo} from "../../types/todo";
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss'
 })
-export class TableComponent {
-  @Input() data: Todo[] = [];
-  @Input() columns!: ColumnDef<Todo>[]
-  table!: Table<Todo>;
+export class TableComponent<T> {
+  @Input() data: T[] = [];
+  @Input() columns!: ColumnDef<T>[]
+  table!: Table<T>;
 
   ngOnInit(): void {
     this.table = createAngularTable(() => ({
